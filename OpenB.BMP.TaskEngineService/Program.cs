@@ -5,7 +5,7 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OpenB.BPME.Service
+namespace OpenB.BPM.TaskEngineService
 {
     static class Program
     {
@@ -17,7 +17,7 @@ namespace OpenB.BPME.Service
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new BusinessProcessEngine()
+                new TaskEngineService()
             };
             ServiceBase.Run(ServicesToRun);
         }

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OpenB.BPME.Core.Test")]
+[assembly: AssemblyTitle("OpenB.TaskEngine.Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OpenB.BPME.Core.Test")]
+[assembly: AssemblyProduct("OpenB.TaskEngine.Test")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f009de8e-e906-4815-b842-b69709a7db0e")]
+[assembly: Guid("4f0ead76-9ef0-49e3-a077-cb3db3c10af7")]
 
 // Version information for an assembly consists of the following four values:
 //
