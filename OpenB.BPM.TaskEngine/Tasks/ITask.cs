@@ -1,4 +1,4 @@
-﻿namespace OpenB.BMP.TaskEngine.Triggers
+﻿namespace OpenB.BPM.TaskEngine.Tasks
 {
 
     public interface ITask

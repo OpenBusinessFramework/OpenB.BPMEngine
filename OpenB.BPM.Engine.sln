@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenB.BPME.Service", "OpenB.BPME.Service\OpenB.BPME.Service.csproj", "{C5788E4E-EBDC-4781-9783-CCE7FE8D366C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenB.BPME.Core", "OpenB.BPME.Core\OpenB.BPME.Core.csproj", "{CC0505A5-78E0-4BDB-A8AB-F426ECC77673}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenB.BPM.Core", "OpenB.BPME.Core\OpenB.BPM.Core.csproj", "{CC0505A5-78E0-4BDB-A8AB-F426ECC77673}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenB.BPME.Core.Test", "OpenB.BPME.Core.Test\OpenB.BPME.Core.Test.csproj", "{F009DE8E-E906-4815-B842-B69709A7DB0E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenB.BPM.Core.Test", "OpenB.BPME.Core.Test\OpenB.BPM.Core.Test.csproj", "{F009DE8E-E906-4815-B842-B69709A7DB0E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenB.BPM.TaskEngineService", "OpenB.BMP.TaskEngineService\OpenB.BPM.TaskEngineService.csproj", "{D73F7D7D-801E-432F-917F-3E5D1AE0CE4C}"
 EndProject

@@ -1,4 +1,4 @@
-﻿namespace OpenB.BPME.Core.Events
+﻿namespace OpenB.BPM.Core.Events
 {
     public class SendMailEvent : BaseAction<SendMailEventInput>, IEventAction
     {

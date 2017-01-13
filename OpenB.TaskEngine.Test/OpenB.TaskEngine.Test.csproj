@@ -60,7 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Runners\TimedRunnerTest.cs" />
+    <Compile Include="Triggers\TimedTriggerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OpenB.BPM.TaskEngine\OpenB.BPM.TaskEngine.csproj">
@@ -73,6 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\BaseConfiguration.TaskEngine.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

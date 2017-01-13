@@ -1,4 +1,4 @@
-﻿using OpenB.BMP.TaskEngine.Triggers;
+﻿using OpenB.BPM.TaskEngine.Triggers;
 using System;
 
 namespace OpenB.BPM.TaskEngine

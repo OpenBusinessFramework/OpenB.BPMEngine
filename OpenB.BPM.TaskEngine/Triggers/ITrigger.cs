@@ -1,4 +1,4 @@
-﻿namespace OpenB.BMP.TaskEngine.Triggers
+﻿namespace OpenB.BPM.TaskEngine.Triggers
 {
     public interface ITrigger
     {

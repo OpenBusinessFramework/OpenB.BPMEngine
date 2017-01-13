@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<TaskEngineConfiguration>
+  <Triggers>
+    <TimedTrigger Task="">
+      <StartMoment>01-01-1980T12:00:00</StartMoment>
+      <Interval>00:30:00</Interval>      
+    </TimedTrigger>
+  </Triggers>
+</TaskEngineConfiguration>

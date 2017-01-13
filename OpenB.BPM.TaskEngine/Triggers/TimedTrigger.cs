@@ -1,26 +1,28 @@
-﻿using System;
+﻿using OpenB.BPM.TaskEngine.Tasks;
+using System;
 using System.Timers;
 
-namespace OpenB.BMP.TaskEngine.Triggers
+namespace OpenB.BPM.TaskEngine.Triggers
 {
     public class TimedTrigger<T> : ITrigger where T :  ITask, new()
     {
         private bool HasRun;
 
-        public DateTime StartMoment { get; private set; }
+        public DateTime? StartMoment { get; private set; }
+        public DateTime? EndMoment { get; private set; }
         public TimeSpan Interval { get; private set; }
         public Timer Timer { get; private set; }
         public T Task { get; private set; }
-        public bool RunOnlyOnce { get; private set; }
+        public bool RunOnlyOnce { get; private set; }       
 
-        public TimedTrigger(DateTime startMoment, TimeSpan interval, bool runOnlyOnce)
+        public TimedTrigger(DateTime startMoment, DateTime endMoment, TimeSpan interval, bool runOnlyOnce)
         {
+            EndMoment = endMoment;
             RunOnlyOnce = runOnlyOnce;
             Task = new T();
 
             Interval = interval;
-            StartMoment = startMoment;  
-            
+            StartMoment = startMoment;              
         }
 
         public void Initialize()
@@ -52,7 +54,10 @@ namespace OpenB.BMP.TaskEngine.Triggers
 
         public void RunTask()
         {
-            Task.Run();
+            if (Task.IsApplicable)
+            {
+                Task.Run();
+            }
         }
 
         public void Check()

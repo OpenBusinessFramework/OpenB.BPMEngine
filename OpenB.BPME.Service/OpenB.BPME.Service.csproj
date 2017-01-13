@@ -57,9 +57,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OpenB.BPME.Core\OpenB.BPME.Core.csproj">
+    <ProjectReference Include="..\OpenB.BPME.Core\OpenB.BPM.Core.csproj">
       <Project>{cc0505a5-78e0-4bdb-a8ab-f426ecc77673}</Project>
-      <Name>OpenB.BPME.Core</Name>
+      <Name>OpenB.BPM.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
