@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace OpenB.BPM.Core
 {
 
-        internal class Process
+        public class Process
         {
             private ExecutionState executionState;
 

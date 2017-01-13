@@ -27,7 +27,14 @@ namespace OpenB.BPM.Core
             IList<T> resultConfigurations = new List<T>();
             
             var configurationPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Configuration", "Processes");
+                   
+
             var configurationDirectory = new DirectoryInfo(configurationPath);
+
+            if (!configurationDirectory.Exists)
+            {
+                throw new XmlConfigurationException($"Configuration folder {configurationDirectory.FullName} not found.");
+            }
 
             foreach (FileInfo file in configurationDirectory.GetFiles("*.processdefinition.xml"))
             {

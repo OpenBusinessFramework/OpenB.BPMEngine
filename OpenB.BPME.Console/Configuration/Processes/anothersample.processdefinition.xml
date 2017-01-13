@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ProcessDefinition xmlns="http://www.openb.org/schemas/bpm/process">
+  <Key>ANOTHER_SAMPLE_PROCESS_DEFINITION</Key>
+  <Name>Another sample process definition</Name>
+</ProcessDefinition>

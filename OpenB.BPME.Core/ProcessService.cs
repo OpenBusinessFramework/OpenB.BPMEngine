@@ -4,6 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Xml;
 using log4net;
+using OpenB.BPM.Core;
 
 namespace OpenB.BPM.Core
 {
@@ -26,13 +27,18 @@ namespace OpenB.BPM.Core
             this.processDataService = processDataService;
         }
 
-        internal static ProcessService GetInstance()
+        public IList<ProcessDefinition> GetActiveProcessDefinitions()
         {
-            ProcessServiceConfiguration configuration = ProcessServiceConfiguration.GetInstance();
-            return new ProcessService( ProcessDataService.GetInstance());
+            return processDataService.GetDefinitions();
         }
 
-        internal Process StartProcess(string processDefinitionKey)
+        public static ProcessService GetInstance()
+        {
+            ProcessServiceConfiguration configuration = ProcessServiceConfiguration.GetInstance();
+            return new ProcessService(ProcessDataService.GetInstance());
+        }
+
+        public Process StartProcess(string processDefinitionKey)
         {
             logger.Info($"Starting process {processDefinitionKey}");
 
@@ -63,9 +69,31 @@ namespace OpenB.BPM.Core
             var configurationFilePath = Path.Combine(assemblyFolder, "configuration", "ProcessService.configuration.xml");
 
             XmlDocument configurationXml = new XmlDocument();
-            configurationXml.Load(configurationFilePath);
 
-            return ParseXml(configurationXml, assemblyFolder);
+
+            FileInfo configurationFileInfo = new FileInfo(configurationFilePath);
+            if (configurationFileInfo.Directory.Exists)
+            {
+                configurationXml.Load(configurationFilePath);
+                return ParseXml(configurationXml, assemblyFolder);
+            }
+            else
+            {
+                throw new XmlConfigurationException($"configuration folder ({configurationFileInfo.Directory.FullName}) not found.");
+            }
+        }
+
+        private static string GetXmlValue(XmlDocument xmlDocument, string xPath)
+        {
+            var selectedXmlNode = xmlDocument.SelectSingleNode(xPath);
+
+            if (selectedXmlNode == null)
+            {
+
+                throw new XmlConfigurationException($"Could not find {xPath}.");
+            }
+
+            return selectedXmlNode.InnerText;
         }
 
         private static ProcessServiceConfiguration ParseXml(XmlDocument configurationXml, string assemblyFolder)
@@ -76,8 +104,16 @@ namespace OpenB.BPM.Core
                 throw new ArgumentNullException(nameof(configurationXml));
 
             ProcessServiceConfiguration resultConfiguration = new ProcessServiceConfiguration();
-            resultConfiguration.AssemblyFolder = Path.Combine(assemblyFolder, configurationXml.SelectSingleNode("/ProcessService/AssemblyFolder").InnerText);
-            resultConfiguration.StateChangeCheckInterval = int.Parse(configurationXml.SelectSingleNode("/ProcessService/StateChangeCheckInterval").InnerText);
+
+            var assemblyFolderName = GetXmlValue(configurationXml, "/ProcessServiceConfiguration/AssemblyFolder");
+
+
+            resultConfiguration.AssemblyFolder = assemblyFolderName;
+
+            var stateChangeCheckInterval = GetXmlValue(configurationXml, "/ProcessServiceConfiguration/StateChangeCheckInterval");
+
+
+            resultConfiguration.StateChangeCheckInterval = int.Parse(stateChangeCheckInterval);
 
             return resultConfiguration;
         }

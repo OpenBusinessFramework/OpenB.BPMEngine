@@ -7,5 +7,6 @@ namespace OpenB.BPM.Core
         {
             ProcessDefinition GetDefinition(string processDefinitionKey);
             IList<Process> GetRunningProcesses();
-        }
+            IList<ProcessDefinition> GetDefinitions();
+    }
 }

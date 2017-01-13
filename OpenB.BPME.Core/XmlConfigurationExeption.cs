@@ -1,25 +1,24 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace OpenB.DSL.Test
+namespace OpenB.BPM.Core
 {
-
     [Serializable]
-    internal class XmlConfigurationExeption : Exception
+    internal class XmlConfigurationException : Exception
     {
-        public XmlConfigurationExeption()
+        public XmlConfigurationException()
         {
         }
 
-        public XmlConfigurationExeption(string message) : base(message)
+        public XmlConfigurationException(string message) : base(message)
         {
         }
 
-        public XmlConfigurationExeption(string message, Exception innerException) : base(message, innerException)
+        public XmlConfigurationException(string message, Exception innerException) : base(message, innerException)
         {
         }
 
-        protected XmlConfigurationExeption(SerializationInfo info, StreamingContext context) : base(info, context)
+        protected XmlConfigurationException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
     }

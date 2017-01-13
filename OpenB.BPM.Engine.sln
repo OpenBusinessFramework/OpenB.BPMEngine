@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenB.BPM.TaskEngine", "Ope
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenB.TaskEngine.Test", "OpenB.TaskEngine.Test\OpenB.TaskEngine.Test.csproj", "{4F0EAD76-9EF0-49E3-A077-CB3DB3C10AF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenB.BPME.Console", "OpenB.BPME.Console\OpenB.BPME.Console.csproj", "{BF4BED9A-3ED0-4191-B08B-D20C35ABE533}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{4F0EAD76-9EF0-49E3-A077-CB3DB3C10AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F0EAD76-9EF0-49E3-A077-CB3DB3C10AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F0EAD76-9EF0-49E3-A077-CB3DB3C10AF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF4BED9A-3ED0-4191-B08B-D20C35ABE533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF4BED9A-3ED0-4191-B08B-D20C35ABE533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF4BED9A-3ED0-4191-B08B-D20C35ABE533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF4BED9A-3ED0-4191-B08B-D20C35ABE533}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

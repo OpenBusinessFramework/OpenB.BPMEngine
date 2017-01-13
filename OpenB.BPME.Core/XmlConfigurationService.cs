@@ -11,7 +11,7 @@ namespace OpenB.BPM.Core
             XmlSerializer serializer = new XmlSerializer(typeof(T));
 
             StreamReader reader = new StreamReader(xmlFilePath);
-
+            
             T result = (T)serializer.Deserialize(reader);
             reader.Close();
 

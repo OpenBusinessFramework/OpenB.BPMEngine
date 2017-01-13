@@ -35,7 +35,6 @@ namespace OpenB.BPM.Core
             {
                 SQLiteConnection.CreateFile(fullPath);
                 createTables = true;
-
             }
 
             // Create connection if non existant.
@@ -77,6 +76,11 @@ namespace OpenB.BPM.Core
             connection.Close();
 
             return result;
+        }
+
+        public IList<ProcessDefinition> GetDefinitions()
+        {
+           return configurationManager.GetConfigurations<ProcessDefinition>();
         }
     }
 }
